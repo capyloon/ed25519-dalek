@@ -451,6 +451,8 @@ impl ExpandedSecretKey {
     where
         D: Digest<OutputSize = U64>,
     {
+        use crate::curve25519_dalek::digest::Update;
+
         let mut h: Sha512;
         let mut prehash: [u8; 64] = [0u8; 64];
         let R: CompressedEdwardsY;
